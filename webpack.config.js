@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
   target: 'web',
   // 入口
-  entry: './src/index.js',
+  entry: './src/index.ts',
   // 模式 development
   mode: 'development',
   // 出口
@@ -37,13 +37,14 @@ module.exports = {
         type: 'asset/resource'
       },
       {
-        test: /\.m?js$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        }
-      }
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   // 插件
   plugins: [
@@ -55,6 +56,5 @@ module.exports = {
     }),
     new CompressionPlugin()
   ],
-
   devtool: 'source-map'
 }
