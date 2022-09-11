@@ -1,6 +1,3 @@
-## JS webpack BruceFE
-- 初始空專案
-
 ## 如何在js项目引入ts
 
 1. 先引入项目依赖
